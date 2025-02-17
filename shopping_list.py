@@ -1,4 +1,5 @@
 import os
+import json
 
 
 def load_shopping_list(filepath):
@@ -19,7 +20,11 @@ def save_shopping_list(filepath, items):
 
 
 def main():
-    filepath = "/Users/hiroki/Library/Mobile Documents/com~apple~CloudDocs/自作アプリ/shopping_list.txt"
+    # shopping_list.txtを保存したいパスをconfig.jsonに記入して読み込む
+    with open("config.json", "r", encoding="utf-8") as f:
+      config = json.load(f)
+
+    filepath = config["shopping_list_path"]
 
     items = load_shopping_list(filepath)
 
