@@ -21,7 +21,7 @@ def save_shopping_list(filepath, items):
 
 def main():
     # shopping_list.txtを保存したいパスをconfig.jsonに記入して読み込む
-    with open("config.json", "r", encoding="utf-8") as f:
+    with open("/Users/hiroki/Downloads/Python/shopping_list/config.json", "r", encoding="utf-8") as f:
       config = json.load(f)
 
     filepath = config["shopping_list_path"]
